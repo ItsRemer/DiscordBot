@@ -1,4 +1,4 @@
-package remibot;
+package remibot.plinko;
 
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.channel.unions.MessageChannelUnion;

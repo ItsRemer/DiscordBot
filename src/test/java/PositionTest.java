@@ -1,6 +1,6 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import remibot.Position;
+import remibot.plinko.Position;
 
 public class PositionTest {
 

@@ -1,4 +1,4 @@
-package remibot;
+package remibot.plinko;
 
 public record Position(int x, int y) {
 

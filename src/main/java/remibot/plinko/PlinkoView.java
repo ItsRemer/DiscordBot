@@ -1,4 +1,4 @@
-package remibot;
+package remibot.plinko;
 
 public final class PlinkoView {
 
