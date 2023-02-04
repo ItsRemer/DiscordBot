@@ -8,7 +8,7 @@ plugins {
     id 'application'
 }
 
-mainClassName = 'remibot.PlinkoBot'
+mainClassName = 'remibot.EventcordBot'
 
 repositories {
 //    mavenLocal()
