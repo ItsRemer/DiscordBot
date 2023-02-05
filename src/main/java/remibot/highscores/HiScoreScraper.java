@@ -51,7 +51,7 @@ public class HiScoreScraper {
         N("hiscore_oldschool"),
         IM("hiscore_oldschool_ironman"),
         UIM("hiscore_oldschool_ultimate"),
-        HIM("hiscore_oldschool_hardcore_ironman");
+        HCIM("hiscore_oldschool_hardcore_ironman");
 
         private final String urlSuffix;
 
