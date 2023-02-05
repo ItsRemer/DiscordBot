@@ -74,21 +74,20 @@ public class EventcordBot extends ListenerAdapter {
 
     }
 
-    private boolean handlePlinkoCommand(MessageReceivedEvent event) {
+    private void handlePlinkoCommand(MessageReceivedEvent event) {
         Member member = event.getMember();
         if (member == null) {
-            return true;
+            return;
         }
         List<Role> roles = member.getRoles();
         for (Role role : roles) {
             if (role.getName().equals("Coordinators") || role.getName().equals("Plinko Captain") || role.getName().equals("Admin")) {
                 Plinko game = createPlinkoGame(event);
                 games.offer(game);
-                return true;
+                return;
             }
         }
         event.getMessage().reply("You do not have permissions to use this command.").queue();
-        return false;
     }
 
     private void handleKillCountCommand(MessageReceivedEvent event, String[] args) throws HiScoreException {
