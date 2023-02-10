@@ -20,6 +20,7 @@ public class HiScoreScraper {
 
             for (int i = 0; i < killCounts.size(); i++) {
                 final Element root = killCounts.get(i);
+
                 final Element trackableLink = root.select("td a").first();
                 final String trackableName = trackableLink.text();
                 final Elements values = root.select("td[align=right]").not("td:has(img)");

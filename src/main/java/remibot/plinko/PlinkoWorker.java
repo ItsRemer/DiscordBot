@@ -2,6 +2,7 @@ package remibot.plinko;
 
 import net.dv8tion.jda.api.entities.Role;
 import remibot.EventcordBot;
+import remibot.command.impl.PlinkoCommand;
 
 import java.util.Random;
 
@@ -19,7 +20,7 @@ public class PlinkoWorker implements Runnable {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-            Plinko game = EventcordBot.getGames().poll();
+            Plinko game = PlinkoCommand.getGames().poll();
             if (game == null) {
                 continue;
             }
