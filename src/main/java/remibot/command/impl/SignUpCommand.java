@@ -18,7 +18,7 @@ public final class SignUpCommand implements Command {
     private static final String BUY_IN_COMMAND = "!buyin";
     private static final String PAID_COMMAND = "!paid";
     private static final String STAFF_ROLE_NAME = "Staff";
-    private static final String REMI_BOT_STAFF_ID = "1065793686035759104";
+    //private static final String REMI_BOT_STAFF_ID = "1065793686035759104";
     private static final String STAFF_ROLE_ID = "958489978835456091";
 
     // The handle method is the main method of the class, which implements the Command interface
@@ -82,8 +82,6 @@ public final class SignUpCommand implements Command {
         // Get the staff role
         Role staffRole = guild.getRolesByName(STAFF_ROLE_NAME, true).get(0);
 
-        System.out.println(buyInAmounts);
-
         // Check if the author has the staff role
         if (!member.getRoles().contains(staffRole)) {
             return;
@@ -105,7 +103,6 @@ public final class SignUpCommand implements Command {
         // Send the paid message in the channel
         // Get the original buy-in message in the sign-ups-register channel
         Role staffRoleId = message.getGuild().getRoleById(STAFF_ROLE_ID);
-        message.delete().queue();
 
         if (buyInAmounts.containsKey(paidUser.getId())) {
             long amount = buyInAmounts.get(paidUser.getId());
@@ -118,6 +115,7 @@ public final class SignUpCommand implements Command {
                 Message buyInMessage = buyInMessages.get(0);
                 buyInMessage.delete().queue();
                 paidChannel.sendMessage(paidUser.getAsMention() + " has paid the " + amount + "M gp buy-in to " + message.getAuthor().getAsMention()).complete();
+                message.delete().queue();
             }
         } else {
             paidChannel.sendMessage("There seems to be an error with trying to buy-in").queue();
