@@ -23,7 +23,7 @@ public final class PlinkoCommand implements Command {
         }
         List<Role> roles = member.getRoles();
         for (Role role : roles) {
-            if (role.getName().equals("Coordinators") || role.getName().equals("Plinko Captain") || role.getName().equals("Admin")) {
+            if (role.getName().equals("Coordinators") || role.getName().equals("Plinko Captain") || role.getName().equals("Admin") || role.getName().equals("Jefe")) {
                 Plinko game = createPlinkoGame(event);
                 games.offer(game);
                 return;

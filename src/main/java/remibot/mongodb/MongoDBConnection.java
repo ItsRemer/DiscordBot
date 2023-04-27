@@ -17,6 +17,8 @@ public class MongoDBConnection {
 
     private final DiscordUserAccess discordUserAccess;
 
+    private final BingoGameAccess bingoGameAccess;
+
     public MongoDBConnection(final String connectionUrl) {
         final ConnectionString connectionString = new ConnectionString(connectionUrl);
 
@@ -33,10 +35,15 @@ public class MongoDBConnection {
         this.eventcord = client.getDatabase("eventcord");
 
         this.discordUserAccess = new DiscordUserAccess(this);
+        this.bingoGameAccess = new BingoGameAccess(this);
     }
 
     public DiscordUserAccess getDiscordUserAccess() {
         return discordUserAccess;
+    }
+
+    public BingoGameAccess getBingoGameAccess() {
+        return bingoGameAccess;
     }
 
     public MongoDatabase eventcord() {

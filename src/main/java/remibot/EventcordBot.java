@@ -24,7 +24,7 @@ public class EventcordBot extends ListenerAdapter {
 
     public static final MongoDBConnection mongoDB;
 
-    private static final Map<String, Command> COMMANDS = ImmutableMap.<String, Command>builder()
+    private final Map<String, Command> COMMANDS = ImmutableMap.<String, Command>builder()
             .put("!task", new AssignTaskCommand())
             .put("!canceltask", new CancelTaskCommand())
             .put("!checktask", new CheckTaskCommand())
@@ -38,6 +38,9 @@ public class EventcordBot extends ListenerAdapter {
             .put("!commands", new HelpCommand())
             .put("!buyin", new SignUpCommand())
             .put("!paid", new SignUpCommand())
+            .put("!set_bingo_items", new BingoUpdateCommand())
+            .put("!clear_bingo_items", new BingoClearCommand())
+
             .build();
 
     static {
