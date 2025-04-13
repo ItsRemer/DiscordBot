@@ -45,12 +45,12 @@ public class EventcordBot extends ListenerAdapter {
 
     static {
         System.out.println("Connecting to mongodb...");
-        mongoDB = new MongoDBConnection("mongodb+srv://root:51znTmdia0KFwcHH@discord-cluster.sdmi2e9.mongodb.net/?retryWrites=true&w=majority");
+        mongoDB = new MongoDBConnection("#####");
         System.out.println("Mongodb connection established!");
     }
 
     public static void main(String[] args) {
-        JDA bot = JDABuilder.createDefault("MTA2NTEwNTc0NjI4MDMxNzA1OA.G9pnTj.MwdFqmshpPmaIH3pM-2GYu248dXqfmXUSDVMTQ")
+        JDA bot = JDABuilder.createDefault("#####")
                 .enableIntents(GatewayIntent.MESSAGE_CONTENT)
                 .setActivity(Activity.playing("Developed by Remi"))
                 .build();
